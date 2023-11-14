@@ -21,8 +21,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: rgb(37, 39, 39);
+  background: #252727;
 }
 
 .header {
@@ -32,66 +31,65 @@ body {
   align-items: center;
   padding-left: 8rem;
   font-size: 2rem;
-  color: rgb(244, 253, 253);
+  color: #f4fdfd;
 }
 
-#add-book {
-  font-size: 1.07rem;
+.add-book {
+  font-size: 1.02rem;
   margin-left: 65%;
   border: none;
   border-radius: 0.3rem;
-  color:rgb(242, 248, 249);
+  color:#f2f8f9;
   background: #191a1a;
-  width: 150px;
-  height: 40px;
+  width: 140px;
+  height: 35px;
   text-align: center;
 }
 
-#add-book:hover {
+.add-book:hover {
   background-color: #586363;
 }
 
-.modal {
-  display: grid;
+.form-modal {
   border: none;
-  border-radius: 5px;
-  background: rgb(60, 81, 81);
+  border-radius: 9px;
+  background: #3c5151;
   text-align: center;
   color: white;
-  height: 350px;
+  height: 330px;
 }
 
-.modal p:first-child {
+ .form-modal p:first-child {
   font-size: 1.2rem;
-}
+} 
 
-.text-input {
+.input {
   border: none;
   border-radius: 4px;
   height: 2rem;
   width: 15rem;
   padding: 10px;
   color: white;
-  background: rgb(109, 123, 123);
+  background: #6d7b7b;
 }
 
-.add-checkbox {
+.checkbox {
   margin-left: 15px;
   width: 17px;
   height: 17px;
-  accent-color: rgb(36, 125, 125);
+  accent-color: #247d7d;
 }
 
-.submit-button {
+.submit {
   width: 200px;
   height: 35px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: rgb(19, 56, 59);
+  background-color: #13383b;
   color:white;
 }
 
-.submit-button:hover {
-  background-color: rgb(23, 130, 137);
+.submit:hover {
+  background-color: #178289;
 }

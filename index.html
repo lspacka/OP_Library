@@ -9,20 +9,20 @@
   </head>
   <body>
     <div class="header">Library
-      <button id="add-book">Add Book</button>
+      <button class="add-book">Add Book</button>
     </div>
-    <dialog class="modal" closed>
-      <p>Add new book</p>
-      <form action="" id="add-form">
-        <input type="text" placeholder="Title" class="text-input">
+    <dialog class="form-modal">
+      <p>Add New Book</p>
+      <form id="add-form">
+        <input type="text" placeholder="Title" class="input" id="title" autocomplete="off" autofocus>
         <p></p>
-        <input type="text" placeholder="Author" class="text-input">
+        <input type="text" placeholder="Author" class="input" id="author" autocomplete="off">
         <p></p>
-        <input type="text" placeholder="Pages" class="text-input">
+        <input type="number" placeholder="Pages" class="input" id="pages" autocomplete="off">
         <p></p>
-        Have you read it?<input type="checkbox" class="add-checkbox">
+        Have you read it?<input type="checkbox" class="checkbox">
         <p></p>
-        <button class="submit-button">Submit</button>
+        <button class="submit">Submit</button>
       </form>
     </dialog>
   </body>
