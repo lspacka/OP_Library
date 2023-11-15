@@ -57,6 +57,7 @@ body {
   text-align: center;
   color: white;
   height: 330px;
+  transform: translateY(60px);
 }
 
  .form-modal p:first-child {
