@@ -13,16 +13,16 @@
     </div>
     <dialog class="form-modal">
       <p>Add New Book</p>
-      <form id="add-form">
-        <input type="text" placeholder="Title" class="input" id="title" autocomplete="off" autofocus>
+      <form class="form" action="">
+        <input type="text" placeholder="Title" class="input" id="title" autocomplete="off" autofocus required>
         <p></p>
-        <input type="text" placeholder="Author" class="input" id="author" autocomplete="off">
+        <input type="text" placeholder="Author" class="input" id="author" autocomplete="off" required>
         <p></p>
-        <input type="number" placeholder="Pages" class="input" id="pages" autocomplete="off">
+        <input type="number" placeholder="Pages" class="input" id="pages" autocomplete="off" required>
         <p></p>
         Have you read it?<input type="checkbox" class="checkbox">
         <p></p>
-        <button class="submit">Submit</button>
+        <button class="submit" type="submit">Submit</button>
       </form>
     </dialog>
   </body>
