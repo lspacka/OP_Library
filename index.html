@@ -8,22 +8,27 @@
     <title>Library</title>
   </head>
   <body>
-    <div class="header">Library
-      <button class="add-book">Add Book</button>
+    <div class="container">
+      <div class="header">Library
+        <button class="add-book">Add Book</button>
+      </div>
+      <div class="book-container">
+        <dialog class="form-modal">
+          <p>Add New Book</p>
+          <form class="form" action="">
+            <input type="text" placeholder="Title" class="input" id="title" autocomplete="off" autofocus required>
+            <p></p>
+            <input type="text" placeholder="Author" class="input" id="author" autocomplete="off" required>
+            <p></p>
+            <input type="number" placeholder="Pages" class="input" id="pages" autocomplete="off" required>
+            <p></p>
+            Have you read it?<input type="checkbox" class="checkbox">
+            <p></p>
+            <button class="submit" type="submit">Submit</button>
+          </form>
+        </dialog>
+        <!-- <dialog class="book-modal"></dialog> -->
+      </div>
     </div>
-    <dialog class="form-modal">
-      <p>Add New Book</p>
-      <form class="form" action="">
-        <input type="text" placeholder="Title" class="input" id="title" autocomplete="off" autofocus required>
-        <p></p>
-        <input type="text" placeholder="Author" class="input" id="author" autocomplete="off" required>
-        <p></p>
-        <input type="number" placeholder="Pages" class="input" id="pages" autocomplete="off" required>
-        <p></p>
-        Have you read it?<input type="checkbox" class="checkbox">
-        <p></p>
-        <button class="submit" type="submit">Submit</button>
-      </form>
-    </dialog>
   </body>
 </html>
