@@ -27,6 +27,7 @@ function Book(title, author, pages, read) {
 
 function createBookCard() {
     let card = document.createElement('div')
+    // let card_info = document.createElement('div')
     let card_btns = document.createElement('div')
     let book_title = document.createElement('p')
     let book_author = document.createElement('p')
@@ -50,7 +51,9 @@ function createBookCard() {
     card_btns.appendChild(read_btn)
     card_btns.appendChild(del_btn)
     card_btns.setAttribute('class', 'card-btns')
+    // card_info.setAttribute('class', 'card-info')
     card.setAttribute('class', 'card')
+    // card.appendChild(card_info)
     card.appendChild(card_btns)
     book_container.appendChild(card)
 }

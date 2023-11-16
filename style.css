@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   background: #252727;
+  word-wrap: break-word;
 }
 
 .container {
@@ -52,35 +53,39 @@ body {
 }
 
 .card {
-  display: grid; 
-  grid-template-rows: repeat(5, 1fr); 
+  display: flex;
+  flex-direction: column;
   width: 290px;
-  height: 300px;
+  /* height: 260px; */
+  height: auto;
   margin: 10px;
-  padding: 10px;
+  padding-bottom: 20px;
   background: blueviolet;
   color: white;
   font-size: 1.2rem;
   text-align: center;
   border-radius: 10px;
   border: 1px solid whitesmoke;
+  overflow: hidden;
+}
+
+.card p {
+  background: orangered;
 }
 
 .card-btns {
-  margin-top: 40px;
-  display: grid;
-  gap: 10px;
-  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  grid-template-columns: 1fr 1fr;
 }
 
 .card-btn {
   border: none;
   border-radius: 4px;
   color: white;
-  width: 120px;
+  width: 100px;
   height: 30px;
   background:#252727; 
 }
