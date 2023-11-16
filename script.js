@@ -25,37 +25,45 @@ function Book(title, author, pages, read) {
     }
 }
 
-function createBookCard() {
+function createCard() {
     let card = document.createElement('div')
-    // let card_info = document.createElement('div')
     let card_btns = document.createElement('div')
     let book_title = document.createElement('p')
     let book_author = document.createElement('p')
     let book_pages = document.createElement('p')
     let read_btn = document.createElement('button')
+    card.setAttribute('class', 'card')
+    card.setAttribute('id', `${library.length - 1}`)
+    card_btns.setAttribute('class', 'card-btns')
     read_btn.setAttribute('class', 'card-btn')
     read_btn.setAttribute('id', 'read-btn')
     let del_btn = document.createElement('button')
     del_btn.setAttribute('class', 'card-btn')
     del_btn.setAttribute('id', 'del-btn')
 
-    book_title.textContent = `"${title}"`
-    book_author.textContent = `${author}`
-    book_pages.textContent = `${pages} pages`
+    book_title.textContent = `"${library[card.id].title}"`
+    book_author.textContent = `${library[card.id].author}`
+    book_pages.textContent = `${library[card.id].pages} pages`
     read_btn.textContent = 'Read'
     del_btn.textContent = 'Remove'
+
+    del_btn.addEventListener('click', () => {
+        removeCard(card.id, card)
+    })
 
     card.appendChild(book_title)
     card.appendChild(book_author)
     card.appendChild(book_pages)
     card_btns.appendChild(read_btn)
     card_btns.appendChild(del_btn)
-    card_btns.setAttribute('class', 'card-btns')
-    // card_info.setAttribute('class', 'card-info')
-    card.setAttribute('class', 'card')
-    // card.appendChild(card_info)
     card.appendChild(card_btns)
     book_container.appendChild(card)
+}
+
+function removeCard(index, card) {
+    card.remove()
+    library.splice(index, 1)
+    console.log(library)
 }
 
 function reset() {
@@ -95,8 +103,8 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     let book = new Book(title, author, pages, is_read)
     addBook(library, book)
-    showLibrary(library)
-    createBookCard()
+    //showLibrary(library)
+    createCard()
     reset()
     console.log(library)
 })

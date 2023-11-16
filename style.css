@@ -70,7 +70,7 @@ body {
 }
 
 .card p {
-  background: orangered;
+  background: rgb(249, 72, 7)
 }
 
 .card-btns {
@@ -87,7 +87,8 @@ body {
   color: white;
   width: 100px;
   height: 30px;
-  background:#252727; 
+  /* background:#252727;  */
+  background: rgb(10, 255, 59);
 }
 
 .card-btn:hover {
