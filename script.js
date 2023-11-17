@@ -1,4 +1,3 @@
-
 let add_book = document.querySelector('.add-book')
 let form_modal = document.querySelector('.form-modal')
 let book_modal = document.querySelector('.book-modal')
@@ -44,13 +43,15 @@ function createCard() {
     del_btn.setAttribute('id', 'del-btn')
 
     book_title.textContent = `"${book.title}"`
-    book_author.textContent = `${book.title}`
+    book_author.textContent = `${book.author}`
     book_pages.textContent = `${book.pages} pages`
 
     read_btn.addEventListener('click', () => {
         book.haveRead()
         read_btn.textContent = book.have_read ? 'Read' : 'Not Read'
-        read_btn.style.border = book.have_read ? '1.5px solid yellowgreen' : 'none'
+        // read_btn.style.border = book.have_read ? '1.5px solid yellowgreen' : 'none'
+        // card.style.border = book.have_read ? '1.5px solid yellowgreen' : '1.5px solid whitesmoke'
+        card.classList.toggle('new-border-color')
     })
     
     del_btn.addEventListener('click', () => {
@@ -70,7 +71,9 @@ function createCard() {
 
 function removeCard(index, card) {
     card.remove()
-    library.splice(index, 1)
+    //  kludgy, but works fine for now. I'll fix it later:
+    delete library[index]
+    // library.splice(index, 1)
     console.log(library)
 }
 
