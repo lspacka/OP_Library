@@ -60,17 +60,13 @@ body {
   height: auto;
   margin: 10px;
   padding-bottom: 20px;
-  background: blueviolet;
+  background: rgb(57, 57, 58);
   color: white;
   font-size: 1.2rem;
   text-align: center;
   border-radius: 10px;
   border: 1px solid whitesmoke;
   overflow: hidden;
-}
-
-.card p {
-  background: rgb(249, 72, 7)
 }
 
 .card-btns {
@@ -87,12 +83,13 @@ body {
   color: white;
   width: 100px;
   height: 30px;
-  /* background:#252727;  */
-  background: rgb(10, 255, 59);
+  background:#09151b; 
+  font-family: geist-black;
+  font-size: 0.75rem;
 }
 
 .card-btn:hover {
-  background: #373939;
+  background: #254b4b !important; 
 }
 
 .add-book {
@@ -120,7 +117,7 @@ body {
   color: white;
   width: 300px;
   height: 350px;
-  /* transform: translateY(10px); */
+  transform: translateY(-10px);
 }
 
  .form-modal p:first-child {

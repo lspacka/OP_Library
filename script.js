@@ -21,11 +21,13 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.have_read = read
     this.haveRead = function() {
-        return !read
+        this.have_read = !this.have_read
     }
 }
 
 function createCard() {
+    let index = library.length - 1
+    let book = library[index]
     let card = document.createElement('div')
     let card_btns = document.createElement('div')
     let book_title = document.createElement('p')
@@ -33,7 +35,7 @@ function createCard() {
     let book_pages = document.createElement('p')
     let read_btn = document.createElement('button')
     card.setAttribute('class', 'card')
-    card.setAttribute('id', `${library.length - 1}`)
+    card.setAttribute('id', `${index}`)
     card_btns.setAttribute('class', 'card-btns')
     read_btn.setAttribute('class', 'card-btn')
     read_btn.setAttribute('id', 'read-btn')
@@ -41,16 +43,23 @@ function createCard() {
     del_btn.setAttribute('class', 'card-btn')
     del_btn.setAttribute('id', 'del-btn')
 
-    book_title.textContent = `"${library[card.id].title}"`
-    book_author.textContent = `${library[card.id].author}`
-    book_pages.textContent = `${library[card.id].pages} pages`
-    read_btn.textContent = 'Read'
-    del_btn.textContent = 'Remove'
+    book_title.textContent = `"${book.title}"`
+    book_author.textContent = `${book.title}`
+    book_pages.textContent = `${book.pages} pages`
 
+    read_btn.addEventListener('click', () => {
+        book.haveRead()
+        read_btn.textContent = book.have_read ? 'Read' : 'Not Read'
+        read_btn.style.border = book.have_read ? '1.5px solid yellowgreen' : 'none'
+        console.log(book.have_read)
+    })
+    
     del_btn.addEventListener('click', () => {
-        removeCard(card.id, card)
+        removeCard(index, card)
     })
 
+    read_btn.textContent = 'Not Read'
+    del_btn.textContent = 'Remove'
     card.appendChild(book_title)
     card.appendChild(book_author)
     card.appendChild(book_pages)
