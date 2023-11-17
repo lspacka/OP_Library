@@ -45,20 +45,21 @@ function createCard() {
     book_title.textContent = `"${book.title}"`
     book_author.textContent = `${book.author}`
     book_pages.textContent = `${book.pages} pages`
+    read_btn.textContent = 'Not Read'
+
+    if (book.have_read) {
+        read_btn.textContent = 'Read'
+        card.classList.toggle('new-border-color')
+    }
 
     read_btn.addEventListener('click', () => {
-        book.haveRead()
-        read_btn.textContent = book.have_read ? 'Read' : 'Not Read'
-        // read_btn.style.border = book.have_read ? '1.5px solid yellowgreen' : 'none'
-        // card.style.border = book.have_read ? '1.5px solid yellowgreen' : '1.5px solid whitesmoke'
-        card.classList.toggle('new-border-color')
+        changeReadState(book, card, read_btn)
     })
     
     del_btn.addEventListener('click', () => {
         removeCard(index, card)
     })
 
-    read_btn.textContent = 'Not Read'
     del_btn.textContent = 'Remove'
     card.appendChild(book_title)
     card.appendChild(book_author)
@@ -67,6 +68,12 @@ function createCard() {
     card_btns.appendChild(del_btn)
     card.appendChild(card_btns)
     book_container.appendChild(card)
+}
+
+function changeReadState(book, card, btn) {
+    book.haveRead()
+    btn.textContent = book.have_read ? 'Read' : 'Not Read'
+    card.classList.toggle('new-border-color')
 }
 
 function removeCard(index, card) {
