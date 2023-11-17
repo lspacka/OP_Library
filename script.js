@@ -51,7 +51,6 @@ function createCard() {
         book.haveRead()
         read_btn.textContent = book.have_read ? 'Read' : 'Not Read'
         read_btn.style.border = book.have_read ? '1.5px solid yellowgreen' : 'none'
-        console.log(book.have_read)
     })
     
     del_btn.addEventListener('click', () => {
