@@ -1,3 +1,5 @@
+//  Kludgy, impuretive code (see what I did there?)
+
 let add_book = document.querySelector('.add-book')
 let form_modal = document.querySelector('.form-modal')
 let book_modal = document.querySelector('.book-modal')
@@ -45,10 +47,10 @@ function createCard() {
     book_title.textContent = `"${book.title}"`
     book_author.textContent = `${book.author}`
     book_pages.textContent = `${book.pages} pages`
-    read_btn.textContent = 'Not Read'
 
+    read_btn.textContent = 'Read'
     if (book.have_read) {
-        read_btn.textContent = 'Read'
+        read_btn.textContent = 'Not Read'
         card.classList.toggle('new-border-color')
     }
 
@@ -72,7 +74,7 @@ function createCard() {
 
 function changeReadState(book, card, btn) {
     book.haveRead()
-    btn.textContent = book.have_read ? 'Read' : 'Not Read'
+    btn.textContent = book.have_read ? 'Not Read' : 'Read'
     card.classList.toggle('new-border-color')
 }
 
