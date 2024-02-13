@@ -1,4 +1,3 @@
-//  Kludgy, impuretive code (see what I did there?)
 
 let add_book = document.querySelector('.add-book')
 let form_modal = document.querySelector('.form-modal')
@@ -35,12 +34,13 @@ function createCard() {
     let book_author = document.createElement('p')
     let book_pages = document.createElement('p')
     let read_btn = document.createElement('button')
+    let del_btn = document.createElement('button')
+
     card.setAttribute('class', 'card')
     card.setAttribute('id', `${index}`)
     card_btns.setAttribute('class', 'card-btns')
     read_btn.setAttribute('class', 'card-btn')
     read_btn.setAttribute('id', 'read-btn')
-    let del_btn = document.createElement('button')
     del_btn.setAttribute('class', 'card-btn')
     del_btn.setAttribute('id', 'del-btn')
 
@@ -48,9 +48,9 @@ function createCard() {
     book_author.textContent = `${book.author}`
     book_pages.textContent = `${book.pages} pages`
 
-    read_btn.textContent = 'Read'
+    read_btn.textContent = 'Not Read'
     if (book.have_read) {
-        read_btn.textContent = 'Not Read'
+        read_btn.textContent = 'Read'
         card.classList.toggle('new-border-color')
     }
 
@@ -74,7 +74,7 @@ function createCard() {
 
 function changeReadState(book, card, btn) {
     book.haveRead()
-    btn.textContent = book.have_read ? 'Not Read' : 'Read'
+    btn.textContent = book.have_read ? 'Read' : 'Not Read'
     card.classList.toggle('new-border-color')
 }
 
@@ -83,7 +83,6 @@ function removeCard(index, card) {
     //  kludgy, but works fine for now. I'll fix it later:
     delete library[index]
     // library.splice(index, 1)
-    console.log(library)
 }
 
 function reset() {
@@ -126,14 +125,11 @@ form.addEventListener('submit', e => {
     //showLibrary(library)
     createCard()
     reset()
-    console.log(library)
 })
 
-//  Impure
 function addBook(library, book) {
     if (book) library.push(book)
     else return
-    // return library
 }
 
 //  Pure
